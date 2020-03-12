@@ -6,32 +6,20 @@ using Ninject;
 
 namespace FractalPainting.App.Actions
 {
-    public class KochFractalAction : IUiAction, INeed<IImageHolder>, INeed<Palette>
+    public class KochFractalAction : IUiAction
     {
-        private IImageHolder imageHolder;
-        private Palette palette;
-
-        public void SetDependency(IImageHolder dependency)
+        private KochPainter painter;
+        public KochFractalAction(KochPainter painter)
         {
-            imageHolder = dependency;
+            this.painter = painter;
         }
-
-        public void SetDependency(Palette dependency)
-        {
-            palette = dependency;
-        }
-
         public string Category => "Фракталы";
         public string Name => "Кривая Коха";
         public string Description => "Кривая Коха";
 
         public void Perform()
         {
-            var container = new StandardKernel();
-            container.Bind<IImageHolder>().ToConstant(imageHolder);
-            container.Bind<Palette>().ToConstant(palette);
-
-            container.Get<KochPainter>().Paint();
+            painter.Paint();
         }
     }
 }
