@@ -93,6 +93,7 @@
     <Compile Include="App\Actions\PaletteSettingsAction.cs" />
     <Compile Include="App\Actions\SaveImageAction.cs" />
     <Compile Include="App\AppSettings.cs" />
+    <Compile Include="App\Category.cs" />
     <Compile Include="App\Fractals\DragonPainter.cs" />
     <Compile Include="App\Fractals\DragonSettings.cs" />
     <Compile Include="App\Fractals\DragonSettingsGenerator.cs" />
@@ -112,8 +113,6 @@
     <Compile Include="Infrastructure\Common\IImageSettingsProvider.cs" />
     <Compile Include="Infrastructure\Common\ImageSettings.cs" />
     <Compile Include="Infrastructure\Common\IObjectSerializer.cs" />
-    <Compile Include="Infrastructure\Injection\DependencyInjector.cs" />
-    <Compile Include="Infrastructure\Injection\INeed.cs" />
     <Compile Include="Infrastructure\UiActions\IUiAction.cs" />
     <Compile Include="Infrastructure\Common\Palette.cs" />
     <Compile Include="Infrastructure\Common\SettingsForm.cs" />

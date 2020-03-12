@@ -1,7 +1,6 @@
 ﻿using System;
 using FractalPainting.App.Fractals;
 using FractalPainting.Infrastructure.Common;
-using FractalPainting.Infrastructure.Injection;
 using FractalPainting.Infrastructure.UiActions;
 using Ninject;
 
@@ -16,7 +15,8 @@ namespace FractalPainting.App.Actions
             this.factory = factory;
             this.settingsFactory = settingsFactory;
         }
-        public string Category => "Фракталы";
+
+        public Category Category { get; } = Category.Fractals;
         public string Name => "Дракон";
         public string Description => "Дракон Хартера-Хейтуэя";
 
